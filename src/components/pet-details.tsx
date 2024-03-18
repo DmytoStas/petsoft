@@ -3,6 +3,7 @@
 import { usePetContext } from "@/lib/hooks";
 import { type Pet } from "@/lib/types";
 import Image from "next/image";
+import PetBtn from "./pet-btn";
 
 type Props = {
   pet: Pet;
@@ -48,6 +49,15 @@ function TopBar({ pet }: Props) {
       />
 
       <h2 className="text-3xl font-semibold leading-7 ml-5">{pet?.name}</h2>
+
+      <ul className="flex ml-auto gap-2">
+        <li>
+          <PetBtn actionType="edit">Edit</PetBtn>
+        </li>
+        <li>
+          <PetBtn actionType="checkout">Checkout</PetBtn>
+        </li>
+      </ul>
     </div>
   );
 }
