@@ -38,6 +38,7 @@ function EmptyView() {
 }
 
 function TopBar({ pet }: Props) {
+  const { handleCheckoutPet } = usePetContext();
   return (
     <div className="flex items-center bg-white px-8 py-5 border-b border-light">
       <Image
@@ -55,7 +56,12 @@ function TopBar({ pet }: Props) {
           <PetBtn actionType="edit">Edit</PetBtn>
         </li>
         <li>
-          <PetBtn actionType="checkout">Checkout</PetBtn>
+          <PetBtn
+            actionType="checkout"
+            onClick={() => handleCheckoutPet(pet.id)}
+          >
+            Checkout
+          </PetBtn>
         </li>
       </ul>
     </div>
